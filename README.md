@@ -15,3 +15,13 @@ source ~/.config/user/zsh/env.bash
 
 #### NVIM
 Create symlink in `~/.config/nvim` pointing to `nvim/` of this repo.
+
+### Latex
+Conveniently create a latex project by running:
+```
+latex_create_ws $PROJECT_NAME
+```
+
+Requirements: 
+- LaTeX. I recommend [TinyTeX](https://github.com/yihui/tinytex).
+- Ghostscript. `brew install ghostscript`
