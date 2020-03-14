@@ -1,5 +1,5 @@
 ## MacOS configuration
-This repo includes config files for various tools.
+This repo includes config files for various tools. Requires zsh.
 
 ### Installation
 Add a symlink in `~/.config/user/` pointing to this repo.
@@ -8,7 +8,7 @@ Add a symlink in `~/.config/user/` pointing to this repo.
 ln -s $PATH_TO_REPO ~/.config/user
 ```
 
-After that, add the following line to either `.zshrc` or `.bashrc` depending on what cli you use. I recommend zsh.
+After that, add the following line to `~/.zshrc`.
 ```bash
 source ~/.config/user/zsh/env.bash
 ```
