@@ -1,13 +1,17 @@
 MAIN_TEX=main
+BUILD_DIR=build
 
-build:
-	pdflatex $(MAIN_TEX).tex -quiet -enc -etex -mltex
-	mv $(MAIN_TEX).pdf $(MAIN_TEX).2.pdf
-	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=$(MAIN_TEX).pdf $(MAIN_TEX).2.pdf
-	rm -f $(MAIN_TEX).2.tex 2> /dev/null
+build: mkbuilddir
+	pdflatex --interaction=errorstopmode -enc -etex -mltex -output-directory=$(BUILD_DIR) $(MAIN_TEX).tex
+	mv $(BUILD_DIR)/$(MAIN_TEX).pdf $(BUILD_DIR)/$(MAIN_TEX).2.pdf
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=$(BUILD_DIR)/$(MAIN_TEX).pdf $(BUILD_DIR)/$(MAIN_TEX).2.pdf
+	rm -f $(BUILD_DIR)/$(MAIN_TEX).2.pdf 2> /dev/null
 
-biber:
-	biber main
+biber: mkbuilddir
+	biber --output_directory $(BUILD_DIR) $(MAIN_TEX)
 
 clean:
-	rm -f main.bbl main.bcf main.blg main.log main.out main.pdf main.run.xml texput.log main.toc main.aux 2> /dev/null
+	rm -rf $(BUILD_DIR)
+
+mkbuilddir:
+	mkdir -p $(BUILD_DIR)
