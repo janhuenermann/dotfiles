@@ -41,3 +41,18 @@ killtouchbar() {
     sudo kill $touchbar_pid
     echo "DONE"
 }
+
+re_source() { source ~/.zshrc }
+
+latex_create_ws()
+{
+    if [ -z "$1" ]; then
+        echo "Usage: latex_create_ws [project name]"
+        return
+    fi
+
+    mkdir $1
+    cp $JAN_CONFIG_DIR/latex/Makefile $1/Makefile
+    cp $JAN_CONFIG_DIR/latex/main.tex $1/main.tex
+
+}
