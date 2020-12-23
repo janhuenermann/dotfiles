@@ -56,3 +56,6 @@ latex_create_ws()
     cp $JAN_CONFIG_DIR/latex/main.tex $1/main.tex
 
 }
+
+
+alias skim=/Applications/Skim.app/Contents/MacOS/Skim
