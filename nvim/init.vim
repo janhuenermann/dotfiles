@@ -31,6 +31,7 @@ Plugin 'dracula/vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'lumiliet/vim-twig'
+Plugin 'jxnblk/vim-mdx-js'
 
 " all of your Plugins must be added before the following line
 call vundle#end()

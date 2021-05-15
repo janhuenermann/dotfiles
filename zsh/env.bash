@@ -9,5 +9,3 @@ source $(dirname "$0")/common.bash
 
 # Include some other variables
 source $(dirname "$0")/config.bash
-
-export SSH_AUTH_SOCK=/Users/jan/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
